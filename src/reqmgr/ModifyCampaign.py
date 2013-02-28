@@ -26,7 +26,7 @@ def main():
                            help = 'Input file with the campaing mapping')
     myOptParser.add_option('-u', '--url', dest = 'url',
                            help = 'WMStats URL',
-                           default = 'https://cmsweb.cern.ch')
+                           default = 'https://cmsweb.cern.ch/couchdb')
     opts, _ = myOptParser.parse_args()
     campaignMapping = open(opts.inputFile, 'r')
     currentCampaign = None
