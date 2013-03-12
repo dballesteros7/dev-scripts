@@ -1,0 +1,54 @@
+{ 
+"createRequest":
+    {       
+        "CMSSWVersion": "CMSSW_5_3_7",
+        "GlobalTag": "START53_V7C::All",
+        "Campaign": "Test-MultiTest",       
+        "RequestString": "RequestString-OVERRIDE-ME",
+        "RequestPriority": 100,
+        "TimePerEvent": 60,
+        "ScramArch": "slc5_amd64_gcc462",
+        "RequestType": "LHEStepZero",
+        "Requestor": "cmsdataops",
+        "ConfigCacheUrl": "https://cmsweb.cern.ch/couchdb",
+        "ConfigCacheID": "1e5d0226c5337f5a011d407ea2d06e04",
+        "PrimaryDataset": "DY2JetsToLL_M-50_8TeV_ext-madgraph",
+        "RequestNumEvents" : 4000000,
+        "ProdJobSplitAlgo" : "EventBased",
+        "ProdJobSplitArgs" : {"events_per_job": 100000, "events_per_lumi": 300},
+        "FirstEvent" : 1,
+        "FirstLumi" : 1,
+        "EventsPerLumi" : 300,
+        "PrepID": "LHETEST-0001",
+        "Group": "cmsdataops",
+        "Memory": 2394967,
+        "SizePerEvent":5000,
+        "Scenario" : "pp",
+        "DbsUrl": "http://cmsdbsprod.cern.ch/cms_dbs_prod_global/servlet/DBSServlet"
+    },
+
+"assignRequest":
+    {
+        "SiteWhitelist": "T1_US_FNAL",
+        "SiteBlacklist": [],
+        "MergedLFNBase": "/store/backfill/1",
+        "UnmergedLFNBase": "/store/unmerged",
+        "MinMergeSize": 2147483648,
+        "MaxMergeSize": 4294967296,
+        "MaxMergeEvents": 50000,
+        "AcquisitionEra": "TEST_WMAGENT_094x",
+        "ProcessingVersion": 1,
+        "ProcessingString" : "TestMC",
+        "maxRSS": 4294967296,
+        "maxVSize": 4294967296,
+        "SoftTimeout": 129600,
+        "GracePeriod": 300,
+        "dashboard": "production",
+        "Team": "cmsdataops",
+        "CustodialSites": [],
+        "NonCustodialSites": [],
+        "AutoApproveSubscriptionSites": [],
+        "SubscriptionPriority": "Low",
+        "CustodialSubType" : "Move"
+    }
+}

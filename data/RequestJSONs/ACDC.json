@@ -1,0 +1,45 @@
+{ 
+"createRequest":
+    {       
+        "RequestString": "RequestString-OVERRIDE-ME",
+        "RequestPriority": 100,
+        "TimePerEvent": 60,
+        "OriginalRequestName": "cmsdataops_RequestTest_MC_ACDC_Parent_130227_150337_9113",
+        "InitialTaskPath" : "/cmsdataops_RequestTest_MC_ACDC_Parent_130227_150337_9113/Production",
+        "ACDCServer" : "http://cmssrv101.fnal.gov:5984",
+        "ACDCDatabase" : "wmagent_acdc",
+        "RequestType": "Resubmission",
+        "Requestor": "cmsdataops",
+        "PrepID": "RERECOTEST-0001",
+        "Group": "cmsdataops",
+        "Memory": 2394967,
+        "SizePerEvent":5000,
+        "DbsUrl": "http://cmsdbsprod.cern.ch/cms_dbs_prod_global/servlet/DBSServlet"
+    },
+
+"assignRequest":
+    {
+        "SiteWhitelist": "T1_US_FNAL",
+        "SiteBlacklist": [],
+        "MergedLFNBase": "/store/backfill/1",
+        "UnmergedLFNBase": "/store/unmerged",
+        "MinMergeSize": 2147483648,
+        "MaxMergeSize": 4294967296,
+        "MaxMergeEvents": 50000,
+        "AcquisitionEra": "TEST_WMAGENT_094x",
+        "ProcessingVersion": 1,
+        "ProcessingString" : "TestMC",
+        "maxRSS": 4294967296,
+        "maxVSize": 4294967296,
+        "SoftTimeout": 129600,
+        "GracePeriod": 300,
+        "dashboard": "production",
+        "Team": "cmsdataops",
+        "CustodialSites": [],
+        "NonCustodialSites": [],
+        "AutoApproveSubscriptionSites": [],
+        "SubscriptionPriority": "Low",
+        "CustodialSubType" : "Move"
+    }
+}
+

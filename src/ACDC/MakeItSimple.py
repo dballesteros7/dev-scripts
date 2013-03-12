@@ -54,15 +54,15 @@ def buildJSON(acdcRequestName, task, host,
 
     return baseJSON
 
-def checkForACDC(acdcDB, requestName, owner, group):
+def checkForACDC(acdcUrl, requestName, owner, group):
 
     timeout = 60
-    hostAddr = acdcDB.split('/')[2].split(':')[0]
-    command = 'ssh {hostAddr} "curl -g -X GET \'{acdcDB}/_design/ACDC/_view/owner_coll_fileset_count?'
+    hostAddr = acdcUrl.split('/')[2].split(':')[0]
+    command = 'ssh {hostAddr} "curl -g -X GET \'{acdcUrl}/wmagent_acdc/_design/ACDC/_view/owner_coll_fileset_count?'
     command += 'startkey=[\\"{group}\\",\\"{owner}\\",\\"{request}\\"]'
     command += '&endkey=[\\"{group}\\",\\"{owner}\\",\\"{request}\\",{{}}]'
     command += '&reduce=true&group_level=4\'"'
-    command = command.format(hostAddr = hostAddr, acdcDB = acdcDB,
+    command = command.format(hostAddr = hostAddr, acdcUrl = acdcUrl,
                              group = group, owner = owner,
                              request = requestName)
 
@@ -114,18 +114,22 @@ def checkForACDC(acdcDB, requestName, owner, group):
 def main():
     logging.getLogger().setLevel(logging.INFO)
     myOptParser = OptionParser()
+    dataDir = os.path.join(os.path.dirname(__file__),'../../data/')
     myOptParser.add_option('-m', '--mapping', dest = 'mapFile',
                            help = 'File with the team to acdc host mapping',
-                           default = 'test')
+                           default = os.path.join(dataDir,'teamAgentMap.txt'))
     myOptParser.add_option('-r', '--request', dest = 'request',
-                           help = 'Request to create the ACDCs for',
-                           default = 'vlimant_Winter532012DDoublePhoton_IN2P3Prio1_537p6_130226_124526_9730')
+                           help = 'Request to create the ACDCs for')
     myOptParser.add_option('-j', '--json', dest = 'baseJSON',
                            help = 'Base JSON file for the requests',
-                           default = 'ACDCReReco.json')
+                           default = os.path.join(dataDir, '/RequestJSONs/ACDCReReco.json'))
 
     opts, _ = myOptParser.parse_args()
     
+    if opts.request is None:
+        print "Error: No request specified"
+        return 6
+
     teamToHostMap = {}
     try:
         mapFileHandle = open(opts.mapFile)
@@ -162,7 +166,7 @@ def main():
     acdcsToCreateByHost = {}
     for host in hosts:
         logging.info("Checking ACDC information for %s in %s" % (opts.request, host))
-        acdcsToCreateByHost[host] = checkForACDC(acdcDB = host,
+        acdcsToCreateByHost[host] = checkForACDC(acdcUrl = host,
                                                  requestName = opts.request,
                                                  owner = owner,
                                                  group = group)
@@ -187,11 +191,10 @@ def main():
                 command += '-u https://cmsweb.cern.ch -c %s -k %s ' % (os.environ['X509_USER_PROXY'],
                                                                        os.environ['X509_USER_PROXY'])
                 command += '-f %s ' % jsonFilePath
-                command += '--createRequest --assignRequest'
+                command += '--createRequest --assignRequest '
                 if doSplitting:
                     command += '--changeSplitting'
                 print command
-                print jsonFilePath
                 jsonFileHandle.close()
 
 if __name__ == '__main__':
