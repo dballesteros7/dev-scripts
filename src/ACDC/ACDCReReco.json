@@ -1,0 +1,37 @@
+{ 
+"createRequest":
+    {       
+        "RequestString": "RequestString-OVERRIDE-ME",
+        "RequestPriority": 1000000,
+        "OriginalRequestName": "",
+        "InitialTaskPath" : "",
+        "ACDCServer" : "",
+        "ACDCDatabase" : "wmagent_acdc",
+        "RequestType": "Resubmission",
+        "Requestor": "jen_a",
+        "Group": "DATAOPS",
+        "Memory": 2394967,
+        "SizePerEvent":5000,
+        "TimePerEvent": 60
+    },
+
+"assignRequest":
+    {
+        "SiteWhitelist": [],
+        "SiteBlacklist": [],
+        "MergedLFNBase": "/store/data",
+        "UnmergedLFNBase": "/store/unmerged",
+        "MinMergeSize": 2147483648,
+        "MaxMergeSize": 4294967296,
+        "MaxMergeEvents": 50000,
+        "AcquisitionEra": "",
+        "ProcessingVersion": 1,
+        "ProcessingString" : "22Jan2013",
+        "maxRSS": 4294967296,
+        "maxVSize": 42949672960000,
+        "SoftTimeout": 129600,
+        "GracePeriod": 300,
+        "dashboard": "reprocessing",
+        "Team": ""
+    }
+}
