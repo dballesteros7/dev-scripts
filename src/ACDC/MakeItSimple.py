@@ -114,7 +114,7 @@ def checkForACDC(acdcUrl, requestName, owner, group):
 def main():
     logging.getLogger().setLevel(logging.INFO)
     myOptParser = OptionParser()
-    dataDir = os.path.join(os.path.dirname(__file__),'../../data/')
+    dataDir = os.path.abspath(os.path.join(os.path.dirname(__file__),'../../data/'))
     myOptParser.add_option('-m', '--mapping', dest = 'mapFile',
                            help = 'File with the team to acdc host mapping',
                            default = os.path.join(dataDir,'teamAgentMap.txt'))
@@ -122,7 +122,7 @@ def main():
                            help = 'Request to create the ACDCs for')
     myOptParser.add_option('-j', '--json', dest = 'baseJSON',
                            help = 'Base JSON file for the requests',
-                           default = os.path.join(dataDir, '/RequestJSONs/ACDCReReco.json'))
+                           default = os.path.join(dataDir, 'RequestJSONs/ACDCReReco.json'))
 
     opts, _ = myOptParser.parse_args()
     
