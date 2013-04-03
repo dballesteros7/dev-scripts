@@ -66,7 +66,7 @@ def main():
                 for blockInfo in blockChunk:
                     for fileInfo in blockInfo['file']:
                         if fileInfo['lfn'] in sortedBlocks[block]:
-                            foundFiles.append(fileInfo['lfn'])
+                            foundFiles.add(fileInfo['lfn'])
     if not foundFiles:
         print "I didn't find an abnormal file, feel free to panic!. Please contact a developer."
         return 0
