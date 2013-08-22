@@ -1,0 +1,19 @@
+{
+    "createRequest" :
+        {"Group":"DATAOPS","Requestor":"dballest",
+        "ScramArch":"slc5_amd64_gcc462","SizePerEvent":"815",
+        "ConfigCacheID":"e5004cd8eea82674f9efbd851b2cf0fa","Memory":2300,
+        "PrepID":"BPH-Summer12-00140","DataPileup":"","MCPileup":"",
+        "SkimConfigs":[],"RequestType":"MonteCarlo","PileupConfig":{},
+        "TimePerEvent":107,"InputDatasetTypes":{},
+        "AcquisitionEra":"Summer12","PrimaryDataset":"BdToKstarJPsi_EtaPtFilter_8TeV-pythia6-evtgen",
+        "CouchDBName":"reqmgr_config_cache","CMSSWVersion":"CMSSW_5_3_10",
+        "RequestSizeFiles":"0",
+        "RequestPriority":"80000","FirstEvent":1,
+        "RequestString":"BPH-Summer12-00140_0_v1",
+        "ConfigCacheUrl":"https://cmsweb.cern.ch/couchdb",
+        "Campaign":"Summer12","GlobalTag":"START53_V7C::All",
+        "FilterEfficiency":0.00018,
+        "FirstLumi":1,
+        "RequestNumEvents":"25000000"}
+}

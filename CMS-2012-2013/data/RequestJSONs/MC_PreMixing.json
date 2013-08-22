@@ -1,0 +1,56 @@
+{
+    "createRequest" :
+        {"Group":"DATAOPS",
+         "Requestor":"dballest",
+         "ScramArch":"slc5_amd64_gcc472",
+         "SizePerEvent":"760",
+         "ConfigCacheID":"b4c1ffd7eae32d6221ae99dbd372326b",
+         "Memory":2300,
+         "DataPileup":"",
+         "MCPileup":"/RelValProdMinBias/CMSSW_6_2_0_pre7_g496p02-PRE_ST62_V7-v1/GEN-SIM",
+         "RequestType":"MonteCarlo",
+         "TimePerEvent":10,
+         "PrimaryDataset":"SingleNuE10_Test",
+         "CouchDBName":"reqmgr_config_cache",
+         "CMSSWVersion":"CMSSW_6_2_0_pre7",
+         "RequestPriority":"10000",
+         "RequestString":"PreMixing_DIGIs_v1",
+         "ConfigCacheUrl":"https://cmsweb-testbed.cern.ch/couchdb",
+         "Campaign":"Pre-Mixing-Testing",
+         "GlobalTag":"PRE_ST62_V7::All",
+         "RequestNumEvents":"9000",
+         "FirstEvent" : 1,
+         "FirstLumi" : 1},
+"changeSplitting":
+    {
+        "Production" :
+            {
+                "SplittingAlgo" : "EventBased",
+                "events_per_job" : 360
+            }
+    },
+    "assignRequest":
+      {
+        "SiteWhitelist": "T2_CH_CERN",
+        "SiteBlacklist": [],
+        "MergedLFNBase": "/store/data",
+        "UnmergedLFNBase": "/store/unmerged",
+        "MinMergeSize": 2147483648,
+        "MaxMergeSize": 4294967296,
+        "MaxMergeEvents": 50000,
+        "AcquisitionEra": "CMSSW_6_2_0_pre7_premix",
+        "ProcessingVersion": 1,
+        "ProcessingString" : "PRE_ST62_V7",
+        "maxRSS": 4294967296,
+        "maxVSize": 4294967296,
+        "SoftTimeout": 129600,
+        "GracePeriod": 300,
+        "dashboard": "production",
+        "Team": "testbed-dmwm",
+        "CustodialSites": [],
+        "NonCustodialSites": ["T2_CH_CERN"],
+        "AutoApproveSubscriptionSites": [],
+        "SubscriptionPriority": "Low",
+        "CustodialSubType" : "Move"
+    }
+}

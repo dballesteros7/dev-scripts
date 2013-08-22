@@ -1,0 +1,64 @@
+{ 
+"createRequest":
+    {        
+        "CMSSWVersion": "CMSSW_6_2_0_pre7",
+        "GlobalTag": "PRE_ST62_V7::All",
+        "Campaign":"Pre-Mixing-Testing",
+        "RequestString": "PreMixing_RAW_v2",
+        "RequestPriority": 1000,
+        "ScramArch": "slc5_amd64_gcc472",
+        "RequestType": "ReDigi",
+        "Requestor": "dballest",
+        "RunWhitelist": [],
+        "RunBlacklist": [],
+        "BlockWhitelist": [],
+        "BlockBlacklist": [],
+        "InputDataset": "/RelValSingleGammaPt35/CMSSW_6_2_0_pre7-PRE_ST62_V7-v3/GEN-SIM-DIGI-RAW-HLTDEBUG",
+        "ConfigCacheUrl": "https://cmsweb-testbed.cern.ch/couchdb",
+        "StepOneConfigCacheID": "c9bfb2a1bf04516c72ac2687ebeb0117",
+        "Group": "DATAOPS",
+        "TimePerEvent": 18,
+        "Memory": 2300,
+        "SizePerEvent": 342,
+        "DbsUrl": "http://cmsdbsprod.cern.ch/cms_dbs_prod_global/servlet/DBSServlet",
+        "OpenRunningTimeout" : 0,
+        "DataPileup" : "/SingleNuE10_Test/CMSSW_6_2_0_pre7_premix-PRE_ST62_V7-v1/GEN-SIM-DIGI",
+        "DeterministicPileup" : "True"
+    },
+
+"changeSplitting":
+    {
+        "StepOneProc" :
+            {
+                "SplittingAlgo" : "LumiBased",
+                "lumis_per_job" : 1,
+                "halt_job_on_file_boundaries" : "True",
+                "include_parents" : "False"
+            }
+    },
+
+"assignRequest":
+    {
+        "SiteWhitelist": "T2_CH_CERN",
+        "SiteBlacklist": [],
+        "MergedLFNBase": "/store/data",
+        "UnmergedLFNBase": "/store/unmerged",
+        "MinMergeSize": 2147483648,
+        "MaxMergeSize": 4294967296,
+        "MaxMergeEvents": 50000,
+        "AcquisitionEra": "CMSSW_6_2_0_pre7_premix",
+        "ProcessingVersion": 2,
+        "ProcessingString" : "DR-PRE_ST62_V7",
+        "maxRSS": 4294967296,
+        "maxVSize": 4294967296,
+        "SoftTimeout": 129600,
+        "GracePeriod": 300,
+        "dashboard": "reprocessing",
+        "Team": "testbed-dmwm",
+        "CustodialSites": [],
+        "NonCustodialSites": ["T2_CH_CERN"],
+        "AutoApproveSubscriptionSites": [],
+        "SubscriptionPriority": "Low",
+        "CustodialSubType" : "Move"
+    }
+}

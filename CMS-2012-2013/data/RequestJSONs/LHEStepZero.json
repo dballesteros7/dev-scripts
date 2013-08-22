@@ -1,0 +1,52 @@
+{ 
+"createRequest":
+    {       
+        "CMSSWVersion": "CMSSW_5_3_7",
+        "GlobalTag": "START53_V7C::All",
+        "Campaign": "Test-0969",
+        "RequestString": "PhEDExSubscriber-0001",
+        "RequestPriority": 10000,
+        "TimePerEvent": 4,
+        "ScramArch": "slc5_amd64_gcc462",
+        "RequestType": "LHEStepZero",
+        "Requestor": "dballest",
+        "ConfigCacheUrl": "https://cmsweb.cern.ch/couchdb",
+        "ConfigCacheID": "1e5d0226c5337f5a011d407ea2d06e04",
+        "PrimaryDataset": "DY2JetsToLL_M-50_8TeV_ext-madgraph",
+        "RequestNumEvents" : 50000,
+        "ProdJobSplitAlgo" : "EventBased",
+        "ProdJobSplitArgs" : {"events_per_job": 1000, "events_per_lumi": 300},
+        "FirstEvent" : 1,
+        "FirstLumi" : 1,
+        "EventsPerLumi" : 300,
+        "PrepID": "DBALLEST-0001",
+        "Group": "DATAOPS",
+        "Memory": 2390,
+        "SizePerEvent":120
+    },
+
+"assignRequest":
+    {
+        "SiteWhitelist": ["T1_US_FNAL"],
+        "SiteBlacklist": [],
+        "MergedLFNBase": "/store/backfill/1",
+        "UnmergedLFNBase": "/store/unmerged",
+        "MinMergeSize": 2147483648,
+        "MaxMergeSize": 4294967296,
+        "MaxMergeEvents": 50000,
+        "AcquisitionEra": "BUNNIES_WMAgent_PhEDExSubscriber",
+        "ProcessingVersion": 3,
+        "ProcessingString" : "Test-LHE",
+        "maxRSS": 4294967296,
+        "maxVSize": 4294967296,
+        "SoftTimeout": 129600,
+        "GracePeriod": 300,
+        "dashboard": "production",
+        "Team": "testbed-dmwm",
+        "CustodialSites": ["T1_US_FNAL"],
+        "NonCustodialSites": ["T2_IT_Bari", "T2_US_Wisconsin", "T2_CH_CERN", "T1_UK_RAL_Disk"],
+        "AutoApproveSubscriptionSites": ["T2_CH_CERN"],
+        "SubscriptionPriority": "Normal",
+        "CustodialSubType" : "Move"
+    }
+}
